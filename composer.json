@@ -1,0 +1,21 @@
+{
+    "name": "wesleyalmeida/form-builder",
+    "description": "Object-Oriented helper for building forms in Laravel.",
+    "keywords": ["laravel", "forms", "acl", "rbac"],
+    "authors": [
+        {
+            "name": "Wes Almeida",
+            "email": "wes@tera-tech.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Wesleyalmeida\\Forms\\FormBuilder": "src/wesleyalmeida/Forms/FormBuilder/"
+        }
+    },
+    "minimum-stability": "stable"
+}
