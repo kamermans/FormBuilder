@@ -7,6 +7,7 @@
 
 namespace Wesleyalmeida\Forms\FormBuilder;
 
+
 class FormBuilder {
 
     protected $fields = array();

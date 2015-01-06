@@ -13,8 +13,8 @@
         "illuminate/support": "4.2.*"
     },
     "autoload": {
-        "psr-0": {
-            "Wesleyalmeida\\Forms\\FormBuilder": "src/wesleyalmeida/Forms/FormBuilder/"
+        "psr-4": {
+            "Wesleyalmeida\\Forms\\FormBuilder\\": ["src/wesleyalmeida/Forms/Formbuilder/","tests"]
         }
     },
     "minimum-stability": "stable"
