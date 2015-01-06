@@ -2,6 +2,8 @@
     "name": "wesleyalmeida/form-builder",
     "description": "Object-Oriented helper for building forms in Laravel.",
     "keywords": ["laravel", "forms", "acl", "rbac"],
+    "license": "MIT",
+    "type": "package",
     "authors": [
         {
             "name": "Wes Almeida",
@@ -14,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wesleyalmeida\\Forms\\FormBuilder\\": ["src/wesleyalmeida/Forms/Formbuilder/","tests"]
+            "Wesleyalmeida\\Forms\\FormBuilder\\": ["src/wesleyalmeida/Forms/FormBuilder/","tests"]
         }
     },
     "minimum-stability": "stable"
