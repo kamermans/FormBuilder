@@ -33,7 +33,7 @@ class FormBuilderServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		//
-		App::bind('form-builder', function($app) {
+		App::bind('FormBuilder', function($app) {
 
 			return new FormBuilder;
 
