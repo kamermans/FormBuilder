@@ -9,7 +9,6 @@ namespace Wesleyalmeida\Forms\FormBuilder;
 
 class FormBuilder {
 
-    //commitgit pull
     protected $fields = array();
     protected $labels = array();
 
@@ -21,6 +20,7 @@ class FormBuilder {
      */
     public function addField($name, $element) {
         $this->fields[$name] = $element;
+
         return $this;
     }
 
@@ -33,6 +33,7 @@ class FormBuilder {
     public function addSubmit($label, $options) {
         $element                = Form::submit($label, $options);
         $this->fields['submit'] = $element;
+
         return $this;
     }
 
@@ -44,6 +45,7 @@ class FormBuilder {
      */
     public function addLabel($name, $label) {
         $this->labels[$name] = $label;
+
         return $this;
     }
 
@@ -57,6 +59,7 @@ class FormBuilder {
     public function addLabelField($name, $label, $field) {
         $this->fields[$name] = $field;
         $this->labels[$name] = $label;
+
         return $this;
     }
 
@@ -93,14 +96,15 @@ class FormBuilder {
     }
 
     /**
-     * @param $name   String
-     * @param $values Array
+     * @param $name    String
+     * @param $values  Array
      * @param $default Mixed
      *
      * @return mixed
      */
     public function getOldValueFromValues($name, $values, $default = null) {
         $value = array_key_exists($name, $values) ? $values[$name] : $default;
+
         return $value;
     }
 
@@ -122,9 +126,9 @@ class FormBuilder {
 
         $ids = array_keys($fields);
 
-        foreach($skip as $id) {
-            $key = array_search($id,$ids);
-            if($key !== false){
+        foreach ($skip as $id) {
+            $key = array_search($id, $ids);
+            if ($key !== false) {
                 unset($ids[$key]);
             }
         }
@@ -132,7 +136,7 @@ class FormBuilder {
         return $ids;
     }
 
-    public function getLabelIds(){
+    public function getLabelIds() {
         $labels = $this->getLabels();
 
         $ids = array_keys($labels);
@@ -140,12 +144,12 @@ class FormBuilder {
         return $ids;
     }
 
-    public function getFieldAndLabelIds(){
+    public function getFieldAndLabelIds() {
         $fields = $this->getFieldIds();
 
         $labels = $this->getLabelIds();
 
-        return array('fields'=>$fields, 'labels'=>$labels);
+        return array('fields' => $fields, 'labels' => $labels);
     }
 
 }

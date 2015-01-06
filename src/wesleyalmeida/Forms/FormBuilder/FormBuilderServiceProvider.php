@@ -48,5 +48,4 @@ class FormBuilderServiceProvider extends ServiceProvider {
 		return array();
 	}
 
-	//commit
 }
