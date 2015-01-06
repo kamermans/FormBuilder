@@ -1,4 +1,6 @@
-<?php namespace Wesleyalmeida\FormBuilder;
+<?php
+
+namespace Wesleyalmeida\Forms\FormBuilder;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
