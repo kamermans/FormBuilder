@@ -3,3 +3,6 @@ composer.phar
 composer.lock
 .DS_Store
 .travis.yml
+/bootstrap/compiled.php
+.env.*.php
+.env.php
