@@ -13,7 +13,9 @@
                                 @if($errors->first($element_id))
                                     <p class="text-danger">{{ $errors->first($element_id) }}</p>
                                 @endif
+                                {{ $form->getBefore($element_id) }}
                                 {{ $form->getField($element_id) }}
+                                {{ $form->getAfter($element_id) }}
                             </div>
                         </div>
                     @endforeach

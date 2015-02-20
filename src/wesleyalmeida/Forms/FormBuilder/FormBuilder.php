@@ -115,6 +115,21 @@ class FormBuilder {
     }
 
     /**
+     * @param $name String
+     *
+     * @return string
+     */
+    public function getFieldHtml($name) {
+
+        $html = "";
+        $html.= $this->getBefore($name);
+        $html.= $this->getField($name);
+        $html.= $this->getAfter($name);
+
+        return $html;
+    }
+
+    /**
      * @return array
      */
     public function getLabels() {
@@ -128,6 +143,28 @@ class FormBuilder {
      */
     public function getLabel($name) {
         return $this->labels[$name];
+    }
+
+    /**
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function getBefore($name) {
+        if($this->hasBefore($name)) {
+            return $this->before{$name};
+        }
+    }
+
+    /**
+     * @param $name
+     *
+     * @return mixed
+     */
+    public function getAfter($name) {
+        if ($this->hasAfter($name)) {
+            return $this->after($name);
+        }
     }
 
     /**
