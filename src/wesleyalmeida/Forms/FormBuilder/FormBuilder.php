@@ -12,6 +12,8 @@ class FormBuilder {
 
     protected $fields = array();
     protected $labels = array();
+    protected $before = array();
+    protected $after  = array();
 
     /**
      * @param $name    String
@@ -51,15 +53,47 @@ class FormBuilder {
     }
 
     /**
+     * @param $name String
+     * @param $html String
+     *
+     * @return $this \Wesleyalmeida\Forms\FormBuilder
+     */
+    public function addBeforeHtml($name, $html) {
+        $this->before[$name] = $html;
+
+        return $this;
+    }
+
+    /**
+     * @param $name String
+     * @param $html String
+     *
+     * @return $this \Wesleyalmeida\Forms\FormBuilder
+     */
+    public function addAfterHtml($name, $html) {
+        $this->after[$name] = $html;
+
+        return $this;
+    }
+
+    /**
      * @param $name  String
      * @param $label String
      * @param $field \Illuminate\Html\FormBuilder
      *
      * @return $this \Wesleyalmeida\Forms\FormBuilder
      */
-    public function addLabelField($name, $label, $field) {
-        $this->fields[$name] = $field;
-        $this->labels[$name] = $label;
+    public function addLabelField($name, $label, $field, $before = null, $after = null) {
+        $this->addField($name, $field)
+            ->addLabel($name, $label);
+
+        if($before) {
+            $this->addBeforeHtml($name, $before);
+        }
+
+        if($after) {
+            $this->addAfterHtml($name, $after);
+        }
 
         return $this;
     }
@@ -151,6 +185,30 @@ class FormBuilder {
         $labels = $this->getLabelIds();
 
         return array('fields' => $fields, 'labels' => $labels);
+    }
+
+    /**
+     * @param $name String
+     *
+     * @return bool
+     */
+    public function hasBefore($name) {
+        if(array_key_exists($name, $this->before)) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * @param $name String
+     *
+     * @return bool
+     */
+    public function hasAfter($name) {
+        if(array_key_exists($name, $this->after)) {
+            return true;
+        }
+        return false;
     }
 
 }
