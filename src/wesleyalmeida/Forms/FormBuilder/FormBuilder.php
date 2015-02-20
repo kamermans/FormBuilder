@@ -152,7 +152,7 @@ class FormBuilder {
      */
     public function getBefore($name) {
         if($this->hasBefore($name)) {
-            return $this->before{$name};
+            return $this->before[$name];
         }
     }
 
@@ -163,7 +163,7 @@ class FormBuilder {
      */
     public function getAfter($name) {
         if ($this->hasAfter($name)) {
-            return $this->after($name);
+            return $this->after[$name];
         }
     }
 
