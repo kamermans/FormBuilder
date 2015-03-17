@@ -27,6 +27,24 @@ class FormBuilder {
         return $this;
     }
 
+    public function addNgDirective($directive, $options) {
+        $html = "<";
+        $html.= $directive;
+
+        if(is_array($options)) {
+            foreach($options as $key=>$value) {
+                $html.= " $key=$value";
+            }
+        }
+
+        $html.= ">";
+        $html.= "</$directive>";
+
+        $this->fields[$directive] = $html;
+
+        return $this;
+    }
+
     /**
      * @param $label   String
      * @param $options Array
