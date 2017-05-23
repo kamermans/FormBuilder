@@ -15,4 +15,3 @@ class FormBuilder extends Facade {
         return 'FormBuilder';
     }
 }
-

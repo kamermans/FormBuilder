@@ -21,7 +21,6 @@ class FormBuilderServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('wesleyalmeida/form-builder');
 
 	}
 
@@ -33,7 +32,7 @@ class FormBuilderServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		//
-		App::bind('FormBuilder', function($app) {
+		\App::bind('FormBuilder', function($app) {
 
 			return new FormBuilder();
 
